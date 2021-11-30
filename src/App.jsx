@@ -4,7 +4,6 @@ import Home from './pages/home';
 import About from './pages/about';
 import Portfolio from './pages/portfolio';
 import Project from './pages/project';
-import Home1 from './pages/home';
 import HeaderComponent from './components/headerComponent1';
 import FooterComponent from './components/FooterComponent';
 
