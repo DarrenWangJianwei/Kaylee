@@ -6,7 +6,7 @@ const ServicesComponent = (props) => {
 
     return (
         <>
-        <h1 className='title centrelizeText'>Services</h1>
+        {props.title}
         <div className={services.container}>
           {props.data.map((item,index)=>
             <div className={services.items} key={index}>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './Home'
-import About from './pages/about'
+import Home from './pages/home';
+import About from './pages/about';
 import Portfolio from './pages/portfolio';
-import Project from './pages/project'
-import HeaderComponent from './components/headerComponent';
+import Project from './pages/project';
+import Home1 from './pages/home';
+import HeaderComponent from './components/headerComponent1';
 import FooterComponent from './components/FooterComponent';
 
-import './theme.css'
+import './css/theme1.css'
 
 function App() {
   const [windowScrollY,setWindowScrollY] = useState(window.pageYOffset);
