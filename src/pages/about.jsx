@@ -1,13 +1,10 @@
-import profolioImage from '../images/profolio.jpg';
+import profolioImage from '../images/hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg';
 import SubHeroComponent from '../components/SubHeroComponent';
 import ServicesComponent from '../components/ServicesComponent';
 import BannerComponent from '../components/BannerComponent';
 import TestimonialsComponent from '../components/Testimonials';
 import HeroComponent from '../components/HeroComponent';
-import designIcon from '../images/design_icon.jpg';
-import printIcon from '../images/print_icon.png';
-import packageIcon from '../images/packaging_icon.jpg';
-import bannerBackgroundImage from '../images/banner_picture1.jpg'
+import bannerBackgroundImage from '../images/tobias-tullius-PXXtq6bp6cs-unsplash.jpg'
 import KariAsselin from '../images/people1.png'
 import FadiEid from '../images/people2.png'
 import ChristyMurphy from '../images/people3.png'
@@ -17,33 +14,18 @@ import StephenFriedheim from '../images/people5.png'
 const About = (props) => {
     const ServicesData = [
         {
-          imagePath:designIcon,
-          iconAlt:`design`,
-          title:'BRAND + LOGO DESIGN',
-          description:'Whether you’re looking for a refresh or a brand new visual strategy, we have the experience and creativity to take your identity up a notch (or ten). We offer a variety of logo design packages plus optional brand standards and style guidelines.',
-          subDescription1:'LOGO DESIGN / VISUAL ASSETS',
-          subDescription2:'BUSINESS NAMING / STYLE GUIDES',
-          button:'VIEW CASE STUDIES'
+          title:'Quality',
+          description:'Focused on the quality of objects. Time and people rather than quantity.',
         },
         {
-          imagePath:printIcon,
-          iconAlt:`print`,
-          title:'PRINT DESIGN',
-          description:'In the midst of the digital age, sometimes there’s nothing better than feeling paper between your fingertips. Brochures, book cover design, reports, pitch decks, menus, advertisements, invitations, apparel-you name it, we can design it.',
-          subDescription1:'BROCHURES / MENUS / ADVERTISEMENTS',
-          subDescription2:'BOOK COVER DESIGN / REPORTS',
-          button:'VIEW PRINT0 WORK'
+          title:'Minimalism',
+          description:'Simplified living with only the things that you absolutely need. Things you absolutely want to do and people you absolutely love',
         },
         {
-          imagePath:packageIcon,
-          iconAlt:`packaging`,
-          title:'PAKAGING DESIGN',
-          description:'All design must balance communication and aesthetics but packaging design requires another level of thought and care. Your product has to communicate a lot without a lot of room to work with. Fortunately, we love a good challenge.',
-          subDescription1:'FOOD + BEVERAGE PACKAGING DESIGN',
-          subDescription2:'COSMETICS PACKAGING DESIGN',
-          button:'VIEW PAKAGING WOR'
+          title:'Organized',
+          description:'The objects, times and people that you have all have reasons and designated places for them',
         }
-    ]
+      ]
 
     const TestimonialsData = [
         {
@@ -82,28 +64,28 @@ const About = (props) => {
         <> 
         <section className="subHero">
             <SubHeroComponent 
-                title={'About Covet Design.'}
-                content={'Specializing in logo design and product packaging, Covet approaches every project with enthusiasm and a healthy dose of imagination. We strive for original concepts and we don’t mind working extra hard to get there. Versatility means we offer the same quality of graphic design across industries without it all looking the same. We genuinely listen and do the research to make sure your design fits you and only you.'}
-                backgroundColor={'#999999'}
+                title={'About MUJI TOWNHOME.'}
+                content={"A home built on Muji philosophy is about minimalism in design and quality in living. Similarly to their ideation journey, we will always first ask, “What's best from the user's point of view?” After the complexity of the thought process, what remains are the clean and streamline designs of the final products."}
+                backgroundColor={'#292c25'}
                 profolioImage={profolioImage}
-                profolioName={'Britt Low'}
-                profolioOccupation={'FOUNDER & GRAPHIC DESIGNER'}
+                profolioName={'MUJI Style'}
             >
-                <p>GRAPHIC DESIGNER IN VANCOUVER, BC</p>
-                <h5>Britt Low has been operating as a graphic designer in Vancouver, BC for over 10 years.</h5>
-                <p>“My favourite part of any assignment in elementary school was always the title page. I might have been the only one in junior high science class who took them seriously (probably too seriously). By high school I was art directing the year book and learning photoshop. Yet it wasn’t until university that I realized I could make a career out of my most favourite thing to do. My passion for design has only grown since then: observing, honing, learning, collecting, analyzing, hunched-over, eyes squinting, tweaking, re-tweaking. It’s still my most favourite thing to do.”</p>
-                <p>Britt has an undergraduate degree in Communication and Publishing from Simon Fraser University as well as a certificate in Graphic Design from Emily Carr and BCIT. </p>
+                <p>TOWNHOUSE DEVELOPMENT IN VANCOUVER, BC</p>
+                <h5>MUJI townhouse has been operating in Vancouver, BC for over 10 years</h5>
+                <p>Having a clean and white pristine kitchen for the Muji home is anything but ordinary. When done right, they become visually tidy and open up the existing spaces.</p>
+                <p>Bean bags are one of the most comfortable items you can have in a Muji home. Jazz up your living room with them and you can move your ‘sofa’ anywhere. </p>
+                <p>Being minimalistic and sleek looking, tracklights are a great way to light up the activity areas.</p>
             </SubHeroComponent>
         </section>
         
         <section className="services">
-            <ServicesComponent data={ServicesData}/>
+            <ServicesComponent data={ServicesData} title={<p className='titleMUJI'>What is <span>MUJI</span> Spirit</p>}/>
         </section>
 
         <section className="banner">
             <BannerComponent
-                backgroundImage={bannerBackgroundImage} 
-                content={'Branding is connecting good strategy with good creativity'}
+            backgroundImage={bannerBackgroundImage} 
+            content={''}
             />
         </section>
 

@@ -16,7 +16,7 @@ const SubHeroComponent = (props) => {
                 <div className={subHero.profolio_image} style={{backgroundImage:`url(${props.profolioImage})`}}>
                     <div className={subHero.profolio_image_description}>
                         <h5>{props.profolioName}</h5>
-                        <p className='subDescription'>&nbsp;{props.profolioOccupation}&nbsp;</p>
+                        {props.profolioOccupation && <p className='subDescription'>&nbsp;{props.profolioOccupation}&nbsp;</p>}
                     </div>
                 </div>
             </div>

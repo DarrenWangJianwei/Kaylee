@@ -1,8 +1,13 @@
 import React,{useState} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import register from '../css/Register.module.css'
+import{ init,send } from 'emailjs-com';
 
 const RegisterComponent = () => {
-    const [formData,setFormData] = useState({name:'',cell:'',email:'',firstTimeHomeBuyer:undefined,haveARealtor:undefined});
+    const [formData,setFormData] = useState({name:'',cell:'',email:'',firstTimeHomeBuyer:false,haveARealtor:false});
+    const [sendSuccess,setSendSuccess] = useState(false);
+    init("user_fPxhevcL0lSA01h2D8Am9");
     const handleInputChange = (e) => {
         setFormData({
           ...formData,
@@ -16,12 +21,59 @@ const RegisterComponent = () => {
             [e.target.name]: !formData[e.target.name]
         });
     }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if(sendSuccess){
+            return toast.warn('You did already', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
+        send(
+            'service_u4kg8ms',
+            'template_jyjh9un',
+            formData,
+            'user_fPxhevcL0lSA01h2D8Am9'
+          )
+            .then((response) => {
+                toast.success('SUCCESS!!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+                setSendSuccess(true);
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((err) => {
+                toast.error('UNSUCCESS! Please try again.', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
+              console.log('FAILED...', err);
+            });
+    };
+    
     return (  
         <>
         
         <div className={register.container}>
             <div className={register.whiteBorder} />
-            <form className={register.form} >
+            <form className={register.form} onSubmit={onSubmit}>
                 <legend>REGISTER NOW</legend>
                 <div className={register.formLayout}>                    
                     <label htmlFor="name">NAME:</label>
@@ -35,8 +87,10 @@ const RegisterComponent = () => {
                     <label htmlFor="haveARealtor">Do you have a realtor:</label>
                     <input type="checkbox" id='haveARealtor' name='haveARealtor'  onChange={handleCheckboxChange} value={formData.haveARealtor}/>
                 </div>
+                <button className='primaryButton' type='submit'>{sendSuccess===true ? 'Already Send':'SEND'}</button>
             </form>
         </div>
+        <ToastContainer />
         </>
     );
 }

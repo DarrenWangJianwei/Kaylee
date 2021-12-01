@@ -84,19 +84,7 @@ const Home = (props) => {
           backgroundImage={heroBackgroundImage}
           reducerVar={0}
           containerHeight={100}
-        >
-          <div>
-            <h1 className='title' style={{fontSize:'calc(2em + 2vw)', margin:'0',lineHeight:'1.2em'}}> 
-              We make<br/>
-              irresistible<br/>
-              brands.
-            </h1>
-          </div>
-          <br/>
-          <button type="button" className='primaryButton'>VIEW CASE STUDIES</button>
-          <br/>
-          <button className='buttonWithImage'><img src="images/iconmonstr-arrow-down-circle-thin-64.png" alt="arrow down circle 64px"/></button> 
-        </HeroComponent>
+        />
     </section>
     
     <section className="services">

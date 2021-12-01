@@ -1,12 +1,12 @@
 import React from 'react';
 import hero from '../css/Hero2.module.css'
-
+import MUJI_hero from '../images/MUJI_hero.png'
 const HeroComponent2 = () => {
     return (
         <>
         <div className={hero.container}>
           <div className={hero.backgroundImage}>
-            <h1 className={hero.title1}>Coquitlam BC</h1>
+            <div><img src={MUJI_hero} alt='MUJI hero' width='30%'/></div>
             <h1 className={hero.title2}>COMING IN 2023</h1>
           </div>
         </div>

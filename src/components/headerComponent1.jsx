@@ -1,6 +1,7 @@
 import React,{ useState } from 'react';
 import { Link } from "react-router-dom";
 import header from './../css/Header1.module.css'
+import logo from './../images/logo.png'
 import { MdClose } from "react-icons/md"
 import { FiMenu } from "react-icons/fi"
 const HeaderComponent = () => {
@@ -11,10 +12,16 @@ const HeaderComponent = () => {
     const closeMenu = () => {
         setNavbarOpen(false)
     }
+    const renderToHome = () => {
+        window.location.pathname = '/';
+    }
     return (
         <>
             <nav className={header.navBar}>
                 <nav className={header.hamNavBar}>
+                    <div className={header.logo} onClick={()=>renderToHome()}>
+                        <img src={logo} alt='logo' width='96px' />
+                    </div>
                     <button onClick={handleToggle}>
                         {navbarOpen ? (
                             <MdClose style={{ color: "#ffffff", width: "32px", height: "36px" }} />
