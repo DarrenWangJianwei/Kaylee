@@ -6,9 +6,6 @@ const HeroComponent = (props) => {
   const reduceSideBarHeight = () =>{
     if(props.windowScrollY > 0){
       const reducer = Math.round(props.windowScrollY/5);
-      console.log('w',props.windowScrollY);
-      console.log('reducer', reducer);
-      console.log('reducerVar', props.reducerVar)
       if((reducer-props.reducerVar) <= 110){
         return {height:`${110-(reducer-props.reducerVar)}px`}
       }else{

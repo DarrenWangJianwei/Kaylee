@@ -89,6 +89,7 @@
 .img-hover-container{
   position:relative;
   cursor: pointer;
+  overflow:hidden;
 }
 
 .img-hover-zoom {
@@ -98,9 +99,10 @@
   height:100%;
   width:100%;
   overflow: hidden; 
+  transition: transform .4s ease;
 }
 
-.img-hover-zoom img {
+.img-hover-zoom div {
   transition: transform .4s ease;
   object-fit: cover;
 }
@@ -139,7 +141,7 @@
   opacity: 0.6;
 }
 
-.img-hover-container:hover .img-hover-zoom img{
+.img-hover-container:hover .img-hover-zoom{
   transform: scale(1.2);
 }
 

@@ -4,8 +4,8 @@ import '../css/gallery1.css'
 const GalleryComponent = (props) => {
   const renderImageContent = (item, index) => {
     return (
-      <div key={index} className={`img-hover-container ${item.gridItem}`}>
-        <div className='img-hover-zoom' style={{backgroundImage:`url(${item.src})`}} onClick={(e) => redirectTo(e, index)} />
+      <div key={index} className={`img-hover-container ${item.gridItem}`} onClick={(e) => handleClick(item)}>
+        <div className='img-hover-zoom' style={{backgroundImage:`url(${item.src})`}}/>
         <div className='img-hover-info'>
           <h5>{item.title}</h5>
           <p>{item.brand}</p>
@@ -15,9 +15,8 @@ const GalleryComponent = (props) => {
     ) 
   }
   
-  const redirectTo = (e, index) => {
-    console.log('e',e)
-    console.log('index',index);
+  const handleClick = (item) => {
+    props.setSelectedImg(item.src)
   }
 
   return (
