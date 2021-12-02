@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import LoadingComponent from '../components/LoadingComponent';
 import HeroComponent1 from '../components/HeroComponent1';
 import GalleryComponent from '../components/GalleryComponent1'
 import Modal from '../components/Modal';
@@ -10,6 +11,12 @@ import galleryPicture5 from '../images/prydumano-design-xrv5I6at_vA-unsplash.jpg
 
 const Portfolio = () => {
     const [selectedImg,setSelectedImg] = useState(null);
+    const [completed,setCompleted] = useState(undefined);
+    useEffect(()=>{
+      let timer1 = setTimeout(() => setCompleted(true), 4000);
+      return () => clearTimeout(timer1);
+    },[]);
+
     const GalleryImgUrls = [
         {src:galleryPicture1,gridItem:'first', title:'Bedroom',brand:'Simple and Clear',alt:'Bedroom'},
         {src:galleryPicture2,gridItem:'second', title:'Bookcase',brand:'Bright',alt:'Bookcase'},
@@ -19,6 +26,7 @@ const Portfolio = () => {
       ];
     return (
         <>
+        <LoadingComponent completed={completed}>  
         <section className='marginTopMobileVersion'>
             <HeroComponent1 />
         </section>
@@ -26,6 +34,7 @@ const Portfolio = () => {
         <GalleryComponent imgUrls={GalleryImgUrls} content={'What do you really WANT for life?'} setSelectedImg={setSelectedImg}/>
             {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}
         </section>
+        </LoadingComponent>  
         </>
       );
 }

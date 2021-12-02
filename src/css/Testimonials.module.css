@@ -31,7 +31,7 @@
 .image{
     height:100px;
     width: 100px;
-    background-image: url('../images/people1.png');
+    background-image: url('../images/default-avatar.png');
     background-size: cover;
     border-radius: 50%;
     display: inline-block;

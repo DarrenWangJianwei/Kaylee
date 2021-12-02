@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/home';
 import About from './pages/about';
 import Portfolio from './pages/portfolio';
-import Project from './pages/project';
 import HeaderComponent from './components/headerComponent1';
 import FooterComponent from './components/FooterComponent';
 
@@ -31,12 +31,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
+      <ScrollToTop />
       <HeaderComponent handleTopBarToggle={topBarToggle}/>
       <Routes>
         <Route path="/" element={<Home windowScrollY={windowScrollY}/>} />
-        <Route path="/about" element={<About windowScrollY={windowScrollY}/>}/>
+        <Route path="/about" element={<About windowScrollY={windowScrollY}/>} />
         <Route path="/portfolio" element={<Portfolio />}/>
-        <Route path="/project" element={<Project />}/>
       </Routes>
     </BrowserRouter>
     <FooterComponent />

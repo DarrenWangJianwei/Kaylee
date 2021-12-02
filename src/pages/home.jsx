@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import LoadingComponent from '../components/LoadingComponent';
 import HeroComponent from '../components/HeroComponent2';
 import GalleryComponent from '../components/GalleryComponent1'
 import Modal from '../components/Modal';
@@ -18,7 +19,12 @@ import servicesData from '../pageData/servicesData.json';
 
 const Home = (props) => {
   const [selectedImg,setSelectedImg] = useState(null);
-
+  const [completed,setCompleted] = useState(undefined);
+  useEffect(()=>{
+    let timer1 = setTimeout(() => setCompleted(true), 4000);
+    return () => clearTimeout(timer1);
+  },[]);
+  
   const GalleryImgUrls = [
     {src:galleryPicture1,gridItem:'first', title:'Bedroom',brand:'Simple and Clear',alt:'Bedroom'},
     {src:galleryPicture2,gridItem:'second', title:'Bookcase',brand:'Bright',alt:'Bookcase'},
@@ -27,8 +33,11 @@ const Home = (props) => {
     {src:galleryPicture5,gridItem:'fifth', title:'Bathroom',brand:'Tidy',alt:'Bathroom'},
   ];
 
+
+
   return (
-    <>      
+    <>
+    <LoadingComponent completed={completed}>      
     <section className="hero">
         <HeroComponent
           windowScrollY={props.windowScrollY}
@@ -62,6 +71,7 @@ const Home = (props) => {
     <section className="testimonials">
       <TestimonialsComponent data={testimonialData}/>
     </section>
+    </LoadingComponent>
   </>
   );
 }

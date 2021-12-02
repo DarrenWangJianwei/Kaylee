@@ -1,3 +1,5 @@
+import React,{useState,useEffect} from 'react';
+import LoadingComponent from '../components/LoadingComponent';
 import profolioImage from '../images/hutomo-abrianto-X5BWooeO4Cw-unsplash.jpg';
 import SubHeroComponent from '../components/SubHeroComponent';
 import ServicesComponent from '../components/ServicesComponent';
@@ -9,9 +11,15 @@ import testimonialsData from '../pageData/TestimonialsData.json';
 import servicesData from '../pageData/servicesData.json';
 
 const About = (props) => {
-    
+    const [completed,setCompleted] = useState(undefined);
+    useEffect(()=>{
+      let timer1 = setTimeout(() => setCompleted(true), 4000);
+      return () => clearTimeout(timer1);
+    },[]);
+
     return (
-        <> 
+        <>
+        <LoadingComponent completed={completed}>       
         <section className="subHero">
             <SubHeroComponent 
                 title={'About MUJI TOWNHOME.'}
@@ -58,6 +66,7 @@ const About = (props) => {
         <section className="testimonials">
             <TestimonialsComponent data={testimonialsData}/>
         </section>
+        </LoadingComponent>      
         </>
      );
 }
