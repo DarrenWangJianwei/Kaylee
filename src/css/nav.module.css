@@ -1,0 +1,64 @@
+.hamNavBar{
+    position: relative;
+    height:100%;
+}
+.hamNavBar button {
+    position: absolute;
+    left:50px;
+    top:10px;
+    z-index: 11;
+    cursor: pointer;
+    background: transparent;;
+    border: none;
+}
+
+.menuNav {
+    height:100%;
+    position:absolute;
+    overflow-y: scroll;
+    transform: scaleY(0); 
+    transform-origin: top; 
+    width: 250px;
+    overflow: hidden;
+    z-index: 9;
+    transition:0.5s;
+    padding:0;
+    margin:0;
+    font-size: 1.5em;
+    background-color: #5d5040;
+}
+
+.menuNav.showMenu {
+    transform: scaleY(1);  
+}
+.menuNav ul{
+    list-style: none;
+    background-color: #5d5040;
+}
+.menuNav ul li a {
+    text-decoration: none;
+    color:#ffffff;
+}
+
+.menuNav ul li a:after{
+    background-color: #ffffff;
+}
+
+.menuNav ul li{
+    line-height: 50px;
+    text-align: end;
+    margin:0 15px;
+}
+
+.menuNav ul li:first-child{
+    margin-top:150px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .menuNav{
+        width:150px;
+    }
+}
+
+  

@@ -1,0 +1,32 @@
+.markerContainer{
+    position:absolute;
+    margin:0;
+}
+.marker{
+    background-image: url("../images/iconmonstr-circle-1-32.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+}
+.markerDetail{
+    transform: scaleY(0); 
+    position: absolute;
+    z-index: 10;
+    transform-origin: top; 
+    overflow: hidden;
+    transition:0.5s;
+    background-color: rgba(226, 226, 226, 0.5);
+    min-width: 200px;
+    max-width: 250px;
+}
+.markerContainer h4,p{
+    margin:0;
+}
+
+.markerDetail.showDetail {
+    transform: scaleY(1);  
+}

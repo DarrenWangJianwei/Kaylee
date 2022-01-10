@@ -1,0 +1,38 @@
+.container{
+    height:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 50px;
+    grid-template-areas: 
+        "logo map map map"
+        "nav map map map"
+        "nav sub-logo space space"
+    ;
+}
+.logo{
+    margin: 50px;
+    grid-area: logo;
+    background-image: url("../images/logo_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.nav{
+    grid-area: nav;
+
+}
+.map{
+    grid-area: map;
+    justify-self: center;
+    position:relative;
+}
+
+.subLogo{
+    grid-area: sub-logo;
+    background-image: url("../images/logo_2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-self: end;
+    width:100px;
+    position:relative;
+    bottom:100px;
+}
