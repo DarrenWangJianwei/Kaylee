@@ -4,7 +4,7 @@
 }
 .hamNavBar button {
     position: absolute;
-    left:50px;
+    left:10%;
     top:10px;
     z-index: 11;
     cursor: pointer;
@@ -18,7 +18,7 @@
     overflow-y: scroll;
     transform: scaleY(0); 
     transform-origin: top; 
-    width: 250px;
+    width: 100%;
     overflow: hidden;
     z-index: 9;
     transition:0.5s;
@@ -45,20 +45,30 @@
 }
 
 .menuNav ul li{
-    line-height: 50px;
+    line-height: 2em;
     text-align: end;
     margin:0 15px;
 }
 
 .menuNav ul li:first-child{
-    margin-top:150px;
+    margin-top:calc(50px + 20%);
 }
 
 
-@media screen and (max-width: 500px) {
-    .menuNav{
-        width:150px;
+
+@media screen and (max-width:640px){
+    .hamNavBar button {
+        left:auto;
+        right:10px;
+        top:10px;
+    }
+    .menuNav ul li{
+        line-height: 2em;
     }
 }
 
-  
+@media screen and (max-width:426px){
+    .menuNav ul li{
+        line-height: 3.5em;
+    }
+}
